@@ -1,0 +1,298 @@
+/* Reset styles */
+body, html, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Inter', Arial, sans-serif; /* Primary font with fallbacks */
+  font-size: 16px; /* Default font size */
+  line-height: 1.5; /* Line height for better readability */   
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Navbar container */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #2c2f33, #23272a);  /* Light gray background */
+    color:white;  /* Dark text for contrast */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-family: "Arial", sans-serif;
+    letter-spacing: 1px;
+  }
+  
+  .navbar-logo a {
+    color: white; /* Dark color for logo */
+    text-transform: uppercase;
+  }
+  
+  /* Hamburger Menu */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+  }
+  
+  .hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background: linear-gradient(135deg, #2c2f33, #23272a); 
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+  
+  /* Navbar links */
+  .navbar-links {
+    display: flex;
+    gap: 25px;
+    font-family: "Arial", sans-serif;
+  }
+  
+  .navbar-links li a {
+    font-size: 0.9rem;
+    background: linear-gradient(135deg, #2c2f33, #23272a); 
+    text-transform: uppercase;
+    color:white;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-links li a:hover {
+    color: #6a1b9a;  /* Purple hover effect for links */
+  }
+  
+  /* Active link styling */
+  .navbar-links li a:active,
+  .navbar-links li a:focus,
+  .navbar-links li a:hover {
+    color: #6a1b9a;  /* Purple color for active or hovered link */
+    font-weight: bold;
+    border-bottom: 3px solid #6a1b9a;  /* Purple underline for active link */
+  }
+  
+  /* Profile Button */
+  .profile-button {
+    background-color: #6a1b9a;  /* Purple background */
+    color: white;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .profile-button:hover {
+    background-color: #8e24aa;
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: flex;
+    }
+  
+    .navbar-links {
+      display: none;
+      flex-direction: column;
+      gap: 15px;
+      background-color: #e0e0e0;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      right: 0;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  
+    .navbar-links.active {
+      display: flex;
+    }
+  
+    .profile-button {
+      font-size: 0.8rem;
+    }
+  }
+  
+  
+  
+  /* Navbar End..................................................................*/ 
+  
+  /* General Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Navbar Offset Fix */
+  .home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: white;
+    min-height: 100vh;
+    margin-top: 40px; /* Adjust this value to match your navbar height */
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    gap: 20px;
+  }
+  
+  /* Hero Section Styling */
+  .home__content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .home__title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .home__heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #6a1b9a;
+    margin-bottom: 20px;
+  }
+  
+  .home__description {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .home__button {
+    background-color: #6a1b9a;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .home__button:hover {
+    background-color: #8e24aa;
+    transform: scale(1.05);
+  }
+  
+  .home__image {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .home__image img {
+    width: 500px;
+    height: auto;
+    margin-left: 100px;
+    border-radius: 10px;
+  }
+  
+  /* How the App Works Section */
+  .how-it-works {
+    text-align: center;
+    margin: 40px 0;
+    padding: 20px;
+  }
+  
+  .how-it-works__title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .how-it-works__description {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 0 10px;
+  }
+  
+  .grid-item {
+    text-align: center;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #6a1b9a;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: none;
+  }
+  
+  /* Home Section Styles */
+
+
+
+
+
+

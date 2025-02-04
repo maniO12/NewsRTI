@@ -1,0 +1,116 @@
+/* Full page container */
+.signup-page {
+  display: flex;
+  height: 100vh; /* Full height of the viewport */
+  width: 100vw; /* Full width of the viewport */
+  background-color: #f8f9fa;
+}
+
+/* Left section: Signup container */
+.container2 {
+  display: flex;
+  flex: 1; /* Take one part of the available width */
+  align-items: center;
+  justify-content: center;
+}
+
+/* Signup form container */
+.login-container2 {
+  max-width: 400px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  z-index: 1; /* Ensure it's above the background */
+}
+
+/* Right section: Image container */
+.image-container1 {
+  flex: 1; /* Take the remaining space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Prevent content from overflowing */
+  position: relative;
+  height: 100vh; /* Ensure it takes the full viewport height */
+}
+
+/* Adjust image properties */
+.image-container1 img {
+  width: auto; /* Maintain the image's aspect ratio */
+  height: 80%; /* Ensure the image fills the height of the container */
+  object-fit: contain; /* Prevent cropping; show the entire image */
+}
+
+/* Shared styling */
+h2.text-center {
+  color: #343a40;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form-label4 {
+  font-weight: bold;
+  color: #495057;
+}
+
+.form-control {
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+.newbtn {
+  background-color: #007bff;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+}
+
+.newbtn:hover {
+  background-color: #0056b3;
+}
+
+.text-primary {
+  color: #007bff;
+  cursor: pointer;
+}
+
+.text-primary:hover {
+  text-decoration: underline;
+}
+
+.alert {
+  font-size: 14px;
+  margin-top: 10px;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .signup-page {
+    flex-direction: column;
+  }
+
+  .container2 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-container {
+    height: 250px;
+  }
+
+  .login-container2 {
+    max-width: 90%;
+    padding: 20px;
+  }
+}

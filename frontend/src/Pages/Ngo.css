@@ -1,0 +1,234 @@
+/* Collaboration Page Layout */
+.collaboration-page-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0 auto;
+  color: black;
+  font-weight: bolder;
+  padding: 40px;
+  background: linear-gradient(135deg, #6e7f9f, #c9d6e3);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  animation: fadeIn 2s ease-out;
+}
+
+/* Title and Subtitle */
+.collaboration-page-container .page-title {
+  text-align: center;
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.collaboration-page-container .page-subtitle {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #e0e0e0;
+  margin-bottom: 40px;
+}
+
+/* Section Titles */
+.collaboration-page-container h2 {
+  font-size: 2rem;
+  color: #3e4e56;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.collaboration-page-container h2::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: #ff5a5f;
+  animation: slideIn 1s ease-in-out forwards;
+}
+
+/* Slide-in Effect */
+@keyframes slideIn {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 50px;
+  }
+}
+
+/* Why Collaborate Section */
+.why-collaborate-section {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.why-collaborate-section .images {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 30px;
+  animation: fadeInImages 2s ease-out;
+}
+
+.why-collaborate-section .images img {
+  width: 30%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease  filter 0.6s ease;
+}
+
+.why-collaborate-section .images img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  filter: brightness(1.2);
+}
+
+/* Services & Benefits Section */
+.collaboration-page-container ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.collaboration-page-container ul li {
+  font-size: 1.2rem;
+  color: #4e5d6a;
+  margin-bottom: 15px;
+  position: relative;
+  padding-left: 25px;
+  transition: color 0.5s ease, background-color 0.5s ease;
+}
+
+.collaboration-page-container ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #ff5a5f;
+  font-size: 1.5rem;
+  top: 0;
+}
+
+.collaboration-page-container ul li:hover {
+  color: rgb(26, 116, 26);
+  background-color: rgba(255, 90, 95, 0.1);
+}
+
+.services-section, .benefits-section {
+  animation: slideUp 1s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Form Styling */
+.details-submission-section {
+  width: 800px;
+  margin: 0px auto;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  animation: fadeInForm 2s ease-out;
+}
+
+@keyframes fadeInForm {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.details-submission-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.details-submission-section form input,
+.details-submission-section form textarea {
+  padding: 15px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.details-submission-section form input:focus,
+.details-submission-section form textarea:focus {
+  border-color: #ff5a5f;
+  box-shadow: 0 0 10px rgba(255, 90, 95, 0.3);
+}
+
+.details-submission-section form button {
+  padding: 12px;
+  background: linear-gradient(45deg, #ff5a5f, #ffac8d);
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  align-self: center;
+}
+
+.details-submission-section form button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #ffac8d, #ff5a5f);
+}
+
+.email-confirmation {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #4e5d6a;
+  margin-top: 30px;
+  animation: fadeIn 1s ease-out;
+}
+
+.email-confirmation button {
+  padding: 12px 30px;
+  background-color: #6a0dad;
+  color: white;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.email-confirmation button:hover {
+  transform: scale(1.05);
+  background-color: #5a0a9f;
+}
+
+/* Global Animation Keyframes */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInImages {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

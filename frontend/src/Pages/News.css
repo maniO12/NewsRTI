@@ -1,0 +1,114 @@
+
+.news-grid {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ background: linear-gradient(135deg, #2c2f33, #23272a); 
+}
+
+.encourage {
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  margin-bottom: 20px;
+  background-color:white;
+  line-height: 1.8;
+}
+
+.news-list {
+  display: flex;
+  flex-wrap: wrap; /* Ensure the news cards wrap to the next line */
+  justify-content: space-between; /* Space between items */
+  width: 70%;
+}
+
+.news-card {
+  margin-top:60px;
+  background: linear-gradient(135deg, #2c2f33, #23272a); 
+  border-radius: 8px;
+  color:white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 48%; /* Two items per row, each taking 48% of the width */
+  margin-bottom: 20px; /* Space between rows */
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.news-card:hover {
+  transform: translateY(-10px);
+}
+
+.thumbnail {
+  width: 100%;
+  height: 200px; /* Adjust as needed */
+  overflow: hidden;
+  position: relative;
+}
+
+.thumbnail img,
+.thumbnail video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news-info {
+  padding: 15px;
+  display: flex;
+  color:white;
+  flex-direction: column;
+}
+
+.news-info h3 {
+  font-size: 20px;
+  color:white;
+  margin-bottom: 10px;
+}
+
+.news-info p {
+  font-size: 15px;
+  color: white;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.read-more-button {
+  width: 120px;
+ text-align: center;
+ color:black;
+ border-radius:20px;
+  text-decoration: none;
+  padding: 8px 15px;
+ background-color: white;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.read-more-button:hover {
+  background-color:purple;
+  color: black;
+  border-color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .news-card {
+    width: 48%; /* Two items per row on medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .news-card {
+    width: 100%; /* One item per row on small screens */
+  }
+
+  .news-info h3 {
+    font-size: 18px;
+  }
+
+  .news-info p {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,138 @@
+/* Centering Container */
+.upload-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5; /* Light background to give focus to the form */
+  margin: 0;
+}
+
+/* Form Container Styling */
+.upload-container {
+  width: 100%;
+  max-width: 500px;
+  background-color: #fff;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect for Form */
+.upload-container:hover {
+  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+}
+
+/* Form Title */
+.upload-container h2 {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 25px;
+  color: #333;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Label Styling */
+label {
+  font-size: 15px;
+  color: #555;
+  font-weight: 500;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+/* Input Fields Styling */
+input[type="text"],
+input[type="file"] {
+  padding: 14px 16px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  background-color: #f7f7f7;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+}
+
+/* Input Focus Effect */
+input[type="text"]:focus,
+input[type="file"]:focus {
+  border-color: #007bff;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Button Styling */
+button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  padding: 14px;
+  font-size: 17px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Button Hover Effect */
+button[type="submit"]:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+}
+
+/* Success/Alert Messages */
+.alert {
+  margin-top: 20px;
+  padding: 14px;
+  background-color: #28a745;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Error Alert */
+.error-alert {
+  background-color: #dc3545;
+}
+
+/* Error Messages for Inputs */
+.error {
+  color: #dc3545;
+  font-size: 13px;
+  margin-top: 5px;
+  font-weight: 400;
+}
+
+/* Responsive Design for Mobile */
+@media screen and (max-width: 480px) {
+  .upload-container {
+    padding: 20px;
+  }
+
+  button[type="submit"] {
+    font-size: 15px;
+  }
+
+  input[type="text"],
+  input[type="file"] {
+    font-size: 14px;
+  }
+}
+
+

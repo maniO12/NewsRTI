@@ -1,0 +1,69 @@
+/* Container for the full article */
+.full-article {
+  max-width: 1000px;
+  margin: 20px auto; /* Centers the article */
+  padding: 20px;
+  background: linear-gradient(135deg, #2c2f33, #23272a); /* Background color for the article section */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  font-family: 'Arial', sans-serif; /* Font for readability */
+  color:white; /* Text color */
+  line-height: 1.6; /* Improves readability */
+}
+
+/* Article Title */
+.full-article h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color:white; /* Darker title color for emphasis */
+  font-weight: bold;
+  text-align: center; /* Center aligns the title */
+}
+
+/* Content styling */
+.article-content {
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* Paragraphs within the content */
+.article-content p {
+  margin-bottom: 1.5em;
+  color: white;
+  text-align: justify; /* Justified text for a clean look */
+}
+
+/* Image styling */
+.article-content img {
+  display: block;
+  max-width: 100%;
+  height: auto; /* Maintains aspect ratio */
+  margin: 20px auto; /* Centers the image */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow around the image */
+}
+
+/* Video styling */
+.article-content video {
+  display: block;
+  max-width: 100%;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow around the video */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .full-article {
+    padding: 15px;
+  }
+
+  .full-article h1 {
+    font-size: 1.5rem;
+  }
+
+  .article-content p {
+    font-size: 0.95rem;
+  }
+}

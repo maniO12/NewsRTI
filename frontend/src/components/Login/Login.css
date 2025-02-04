@@ -1,0 +1,115 @@
+/* Login Page Full-Screen Container */
+.login-page {
+  display: flex;
+  height: 100vh; /* Full height of the viewport */
+  width: 100vw; /* Full width of the viewport */
+  background-color: #f8f9fa;
+  overflow-y: hidden;
+}
+
+/* Login Container */
+.container2 {
+  display: flex;
+  flex: 1; /* Full width split between the login and image sections */
+  align-items: center;
+  justify-content:space-between;
+}
+
+/* Left section: Login container */
+.login-container {
+  max-width: 400px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  z-index: 1; /* Ensure it's above the background */
+}
+
+/* Right section: Image container */
+.image-container {
+  flex: 1; /* Take the remaining space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Full-screen background image */
+.image-container img {
+  width: 90%;
+  height: 70%;
+  object-fit: cover; /* Ensure the image covers the entire container */
+}
+
+/* Header styling */
+h2.text-center {
+  color: #343a40;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Form label styling */
+.form-label4 {
+  font-weight: bold;
+  color: #495057;
+}
+
+/* Form control input fields */
+.form-control {
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+/* Button styling */
+.newbtn {
+  background-color: #007bff;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+}
+
+.newbtn:hover {
+  background-color: #0056b3;
+}
+
+/* Alert message styling */
+.alert {
+  font-size: 14px;
+  margin-top: 10px;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}
+
+/* Link styling for signup */
+.text-primary {
+  color: #007bff;
+  cursor: pointer;
+}
+
+.text-primary:hover {
+  text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .login-page {
+    flex-direction: column;
+  }
+
+  .container2 {
+    flex-direction: column;
+  }
+
+  .image-container {
+    height: 250px; /* Adjust image height for smaller screens */
+  }
+}
