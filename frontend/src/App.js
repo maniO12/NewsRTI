@@ -12,7 +12,6 @@ import Display from './components/Upload/Display.js';
 import VideoUpload from './components/Upload/Videoupload.js';
 import WatchVideo from './components/Upload/Watch.js';
 import Filing from './Rtipages/Filing.js'; 
-import Info from './Rtipages/Info.js';
 import Know from './Rtipages/Know.js';
 import Media from './Rtipages/Media.js';
 import Story from './Rtipages/Story.js';
@@ -22,6 +21,9 @@ import Admin from './components/Login/Adminlogin.js';
 import Collaborate from './Pages/Collaborate.js';
 import Ngo from './Pages/Ngo.js';
 import School from './Pages/School.js';
+import Youth from './Pages/Youth.js';
+import Group from './Pages/Group.js';
+
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Tracks general login state
@@ -50,7 +52,6 @@ const App = () => {
 
           {/* RTI-related routes */}
           <Route path="/filing" element={<Filing />} />
-          <Route path="/info" element={<Info />} />
           <Route path="/know" element={<Know />} />
           <Route path="/media" element={<Media />} />
           <Route path="/story" element={<Story />} />
@@ -67,6 +68,8 @@ const App = () => {
 
           <Route path="/ngo" element={<Ngo />} />
           <Route path="/schools" element={<School />} />
+          <Route path="/parliament" element={<Youth />} />
+          <Route path="/group" element={<Group />} />
         </Routes>
       </BrowserRouter>
     </div>

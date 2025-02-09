@@ -1,0 +1,150 @@
+.schools-container {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  padding: 50px;
+  text-align: center;
+}
+
+/* 🎯 Hero Section */
+.hero-section {
+  padding: 50px 20px;
+  border-radius: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* 📸 Image Grid */
+.image-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.image-grid img {
+  width: 40%;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* 🔥 Topics Section */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.card {
+  width: 250px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+  background: #f5f5f5;
+  color: #333;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background: #e3e3e3;
+}
+
+/* 🔷 Partnered Schools Table */
+.collaboration-table {
+  margin-top: 50px;
+}
+
+.collaboration-table table {
+  width: 90%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.collaboration-table th {
+  background: #444;
+  color: white;
+  padding: 15px;
+  font-size: 18px;
+}
+
+.collaboration-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.collaboration-table tr:hover {
+  background: #f5f5f5;
+  transition: background 0.3s ease-in-out;
+}
+
+/* ✨ Partner With Us - Contact Form */
+.contact-form {
+  width: 50%;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+  background: #fff;
+}
+
+.contact-form h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.contact-form:hover {
+  transform: scale(1.02);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #444;
+  box-shadow: 0px 0px 10px rgba(68, 68, 68, 0.4);
+}
+
+.contact-form button {
+  padding: 12px 20px;
+  background: #444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-form button:hover {
+  transform: scale(1.05);
+  background: #222;
+}
+
+.success-message {
+  color: limegreen;
+  font-weight: bold;
+  margin-top: 15px;
+}

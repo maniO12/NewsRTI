@@ -35,54 +35,57 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn, isAuthenticated }) => {
         <span className="bar"></span>
       </div>
 
-      {/* Navbar Links */}
-      <ul className={`navbar-links ${menuOpen ? "active" : ""}`}>
-        <li>
-          <Link to="/home" className="nav-link" onClick={() => setMenuOpen(false)}>
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link to="/news" className="nav-link" onClick={() => setMenuOpen(false)}>
-            News
-          </Link>
-        </li>
-        <li>
-          <Link to="/videos" className="nav-link" onClick={() => setMenuOpen(false)}>
-            Videos
-          </Link>
-        </li>
-        <li>
-          <Link to="/rti" className="nav-link" onClick={() => setMenuOpen(false)}>
-            RTI
-          </Link>
-        </li>
-        <li>
-          <Link to="/report" className="nav-link" onClick={() => setMenuOpen(false)}>
-            Report
-          </Link>
-        </li>
-        <li>
-          <Link to="/collaborate" className="nav-link" onClick={() => setMenuOpen(false)}>
-            Collaborate
-          </Link>
-        </li>
-        {/* Conditionally render admin-only links */}
-        {isAuthenticated && (
-          <>
-            <li>
-              <Link to="/upload" className="nav-link" onClick={() => setMenuOpen(false)}>
-                Upload Video
-              </Link>
-            </li>
-            <li>
-              <Link to="/uploadnews" className="nav-link" onClick={() => setMenuOpen(false)}>
-                Upload News
-              </Link>
-            </li>
-          </>
-        )}
-      </ul>
+      {/* Navbar Links - Only show when logged in */}
+      {isLoggedIn && (
+        <ul className={`navbar-links ${menuOpen ? "active" : ""}`}>
+          <li>
+            <Link to="/home" className="nav-link" onClick={() => setMenuOpen(false)}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/news" className="nav-link" onClick={() => setMenuOpen(false)}>
+              News
+            </Link>
+          </li>
+          <li>
+            <Link to="/videos" className="nav-link" onClick={() => setMenuOpen(false)}>
+              Videos
+            </Link>
+          </li>
+          <li>
+            <Link to="/rti" className="nav-link" onClick={() => setMenuOpen(false)}>
+              RTI
+            </Link>
+          </li>
+          <li>
+            <Link to="/report" className="nav-link" onClick={() => setMenuOpen(false)}>
+              Report
+            </Link>
+          </li>
+          <li>
+            <Link to="/collaborate" className="nav-link" onClick={() => setMenuOpen(false)}>
+              Collaborate
+            </Link>
+          </li>
+
+          {/* Admin-only links */}
+          {isAuthenticated && (
+            <>
+              <li>
+                <Link to="/upload" className="nav-link" onClick={() => setMenuOpen(false)}>
+                  Upload Video
+                </Link>
+              </li>
+              <li>
+                <Link to="/uploadnews" className="nav-link" onClick={() => setMenuOpen(false)}>
+                  Upload News
+                </Link>
+              </li>
+            </>
+          )}
+        </ul>
+      )}
 
       {/* Profile Button */}
       <button className="profile-button" onClick={handleAuthClick}>
@@ -93,7 +96,6 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn, isAuthenticated }) => {
 };
 
 export default Navbar;
-
 
 
 

@@ -54,47 +54,54 @@ router.post(
   }
 );
 
-export default router;
+
 
 //LogIN /api/auth/login
-
-router.post('/login', [
-  body('email', 'Enter a valid email').isEmail(),
-  body('password', 'Password cannot be blank').exists(),
-], async (req, res) => {
-  let success = false
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return res.status(400).json({ success,errors: errors.array() });
-  }
-
-  const { email, password } = req.body;
-  console.log(email + " " + password);
-  try {
-    let user = await User.findOne({ email });
-    if (!user) {
-      success= false;
-      return res.status(400).json({success,error: "Please try to login with correct credentials" });
+router.post(
+  '/login',
+  [
+    body('email', 'Enter a valid email').isEmail(),
+    body('password', 'Password cannot be blank').exists(),
+  ],
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
     }
 
-    const passwordCompare = await bcrypt.compare(password, user.password);
-    if (!passwordCompare) {
-      success= false;
-      return res.status(400).json({success, error: "Please try to login with correct credentials" });
-    }
+    const { email, password } = req.body;
 
-    const data = {
-      user: {
-        id: user.id
+    try {
+      // Find user by email
+      const user = await User.findOne({ email });
+      if (!user) {
+        return res.status(400).json({ error: "Invalid credentials" });
       }
+
+      // Compare the password
+      const isMatch = await bcrypt.compare(password, user.password);
+      if (!isMatch) {
+        return res.status(400).json({ error: "Invalid credentials" });
+      }
+
+      // Create JWT payload
+      const data = {
+        user: {
+          id: user.id,
+        },
+      };
+
+      // Sign the JWT token (expires in 1 hour)
+      const authtoken = jwt.sign(data, JWT_SECRET, { expiresIn: '1h' });
+      res.json({ authtoken, status: true });
+
+    } catch (error) {
+      console.error('Login Error:', error);
+      res.status(500).send('Some error occurred');
     }
-    const authtoken = jwt.sign(data, JWT_SECRET);
-    res.json({authtoken,status:true});
-  } catch (error) {
-    console.error(error.message);
-    res.status(500).send("Internal Server Error");
   }
-});
+);
+
 
 //GetUser api/auth/getUser
 
@@ -113,3 +120,4 @@ catch(error){
   res.status(500).send("Internal Server Error");   
 }
 });
+export default router;

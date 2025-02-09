@@ -5,14 +5,15 @@ import image1 from "../Assests/1680602234690-1-scaled.jpg";
 import image2 from "../Assests/images.jpeg";
 import image3 from "../Assests/istockphoto-870402320-612x612.jpg";
 import image4 from "../Assests/24a7506c-87bd-47a4-b554-9cf18de73d1a_maruti_panchayat_20120806.jpg";
-const CollaborateSection = () => {
+import images5 from "../Assests/images11.jpg";
+import images6 from "../Assests/images22.jpg";
+import images7 from "../Assests/images33.jpg";
+import images8 from "../Assests/images44.jpg";
+
+const Collaborate = () => {
   const [activeSection, setActiveSection] = useState(null);
-  const [areaCommittees, setAreaCommittees] = useState([]);
   const navigate = useNavigate();
 
-  const addCommittee = (areaName) => {
-    setAreaCommittees((prev) => [...prev, areaName]);
-  };
 
   return (
     <div className="collaborate-container">
@@ -57,26 +58,12 @@ const CollaborateSection = () => {
 
         {activeSection === "Committees" && (
           <div className="collaboration-card">
-            <h2>Manage Area Committees</h2>
+            <h2>Manage your area by this Group</h2>
             <p>Create and manage area-specific committees for political literacy.</p>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                const areaName = e.target.areaName.value;
-                addCommittee(areaName);
-                e.target.reset();
-              }}
-            >
-              <input type="text" name="areaName" placeholder="Enter area name" required />
-              <button type="submit" className="add-committee-button">Add</button>
-            </form>
+         
             <h3>Existing Committees:</h3>
             <ul>
-              {areaCommittees.length > 0 ? (
-                areaCommittees.map((area, index) => <li key={index}>{area}</li>)
-              ) : (
-                <li>No committees yet</li>
-              )}
+             <button onClick={() => navigate("/group")}>Join Group</button>
             </ul>
           </div>
         )}
@@ -90,18 +77,17 @@ const CollaborateSection = () => {
             <img src={image2} alt="Education" />
             <img src={image3} alt="Youth Parliament" />
             <img src={image4} alt="Committees" />
+            <img src={images5} alt="Committees" />
+            <img src={images6} alt="Committees" />
+            <img src={images7} alt="Committees" />
+            <img src={images8} alt="Committees" />
           </div>
-          <div className="image-row">
-            <img src="" alt="Community Engagement" />
-            <img src="" alt="Educational Workshops" />
-            <img src="" alt="Youth Empowerment" />
-            <img src="" alt="Local Initiatives" />
-          </div>
+          
         </div>
       )}
     </div>
   );
 };
 
-export default CollaborateSection;
+export default Collaborate;
 

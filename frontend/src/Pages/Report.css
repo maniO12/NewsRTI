@@ -1,38 +1,37 @@
-.report-section-container {
+.report-section-container00 {
   padding: 2rem;
   font-family: 'Arial', sans-serif;
-  background-color: #f9f9f9;
   color: #333;
 }
 
-.report-section-heading {
+.report-section-heading00 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 1rem;
   color: #007bff;
 }
 
-.report-section-description {
+.report-section-description00 {
   text-align: center;
   font-size: 1.1rem;
   margin-bottom: 2rem;
   line-height: 1.6;
 }
 
-.flex-container {
+.flex-container00 {
   display: flex;
   justify-content: space-between;
   gap: 2rem;
   flex-wrap: wrap;
 }
 
-.forms-container {
+.forms-container00 {
   display: flex;
   flex: 1;
   gap: 2rem;
 }
 
-.form-container {
+.form-container00 {
   flex: 1;
   background-color: #ffffff;
   border: 1px solid #ddd;
@@ -41,23 +40,23 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.form-heading {
+.form-heading00 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   color: #333;
   text-align: center;
 }
 
-.form-label {
+.form-label00 {
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
   font-weight: 500;
 }
 
-.form-input,
-.form-select,
-.form-textarea {
+.form-input00,
+.form-select00,
+.form-textarea00 {
   margin-top: 0.5rem;
   padding: 0.5rem;
   border: 1px solid #ccc;
@@ -66,11 +65,12 @@
   width: 100%;
 }
 
-.form-textarea {
+.form-textarea00 {
   resize: vertical;
+  height: 450px;
 }
 
-.form-submit-button {
+.form-submit-button00 {
   background-color: #007bff;
   color: #fff;
   padding: 0.7rem 1.5rem;
@@ -81,11 +81,11 @@
   transition: background-color 0.3s;
 }
 
-.form-submit-button:hover {
+.form-submit-button00:hover {
   background-color: #0056b3;
 }
 
-.report-submission-status {
+.report-submission-status00 {
   margin-top: 2rem;
   padding: 1rem;
   border: 1px solid #007bff;
@@ -94,7 +94,7 @@
   color: #0056b3;
 }
 
-.error-message {
+.error-message00 {
   margin-top: 1rem;
   padding: 1rem;
   border: 1px solid #ff4d4d;
@@ -103,7 +103,7 @@
   color: #b30000;
 }
 
-.dashboard-container {
+.dashboard-container00 {
   margin-top: 3rem;
   background-color: #ffffff;
   border-radius: 8px;
@@ -111,25 +111,25 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.dashboard-container h2 {
+.dashboard-container00 h200 {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
   text-align: center;
   color: #007bff;
 }
 
-.approved-reports-section h3 {
+.approved-reports-section00 h300 {
   font-size: 1.3rem;
   margin-bottom: 1rem;
 }
 
-.approved-reports-section ul {
+.approved-reports-section00 ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-.approved-reports-section li {
+.approved-reports-section00 li {
   background-color: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -138,31 +138,31 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.approved-reports-section li h4 {
+.approved-reports-section00 li h400 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   color: #007bff;
 }
 
-.approved-reports-section li p {
+.approved-reports-section00 li p {
   font-size: 1rem;
   margin: 0.2rem 0;
 }
 
-.upload-folder-section {
+.upload-folder-section00 {
   margin-top: 2rem;
 }
 
-.upload-folder-section h3 {
+.upload-folder-section00 h300 {
   font-size: 1.3rem;
   margin-bottom: 1rem;
 }
 
-.upload-folder-section input {
+.upload-folder-section00 input {
   margin-right: 1rem;
 }
 
-.upload-folder-section button {
+.upload-folder-section00 button {
   background-color: #007bff;
   color: #fff;
   padding: 0.5rem 1rem;
@@ -172,17 +172,17 @@
   transition: background-color 0.3s;
 }
 
-.upload-folder-section button:hover {
+.upload-folder-section00 button:hover {
   background-color: #0056b3;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .flex-container {
+  .flex-container00 {
     flex-direction: column;
   }
 
-  .form-container {
+  .form-container00 {
     margin-bottom: 1rem;
   }
 }

@@ -1,0 +1,139 @@
+/* RTI Success Stories Page */
+.rti-container {
+    margin: auto;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    color: #333;
+    padding: 20px;
+    max-width: 1200px;
+    animation: fadeIn 1.2s ease-in-out;
+  }
+  
+  .rti-header {
+    background: linear-gradient(135deg, #8e24aa, #6a1b9a);
+    color: white;
+    padding: 50px 20px;
+    border-radius: 15px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeInDown 1.5s ease-in-out;
+  }
+  
+  .rti-header h1 {
+    margin: 0;
+    font-size: 2.7rem;
+    font-weight: bold;
+  }
+  
+  .rti-header p {
+    font-size: 1.3rem;
+    margin-top: 10px;
+  }
+  
+  /* Success Stories Section */
+  .rti-info {
+    margin: 40px 0;
+    animation: fadeInUp 1.5s ease-in-out;
+  }
+  
+  .rti-info h2 {
+    color: #8e24aa;
+    font-size: 2rem;
+  }
+  
+  .rti-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .rti-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 30%;
+    min-width: 250px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .rti-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    background: rgba(142, 36, 170, 0.05);
+  }
+  
+  .rti-card h3 {
+    color: #8e24aa;
+    font-size: 1.3rem;
+  }
+  
+  .rti-card p {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #555;
+  }
+  
+  .rti-impact {
+    font-size: 1rem;
+    color: #444;
+    font-weight: bold;
+  }
+  
+  .rti-date {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    display: block;
+    margin-top: 10px;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .rti-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .rti-card {
+      width: 90%;
+    }
+  }
+  

@@ -7,10 +7,14 @@ import videoRoutes from './routes/Videoupload.js';
 import newsRoutes from './routes/Newsupload.js';
 import reportRoutes from './routes/Reportupload.js';
 import adminRoutes from './routes/admin.js';
+
+
 dotenv.config();  // Load environment variables
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+
 
 // Connect to MongoDB Atlas
 mongoose
@@ -23,7 +27,6 @@ app.get("/", (req, res) => {
   res.send("Server is running!");
 });
 
-
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -35,7 +38,9 @@ app.use('/api/videos', videoRoutes);
 app.use('/api/news',newsRoutes);
 app.use('/api/reports',reportRoutes);
 app.use('/api/admin', adminRoutes);
+
+
 // Start the server
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on ${PORT}`);
 });

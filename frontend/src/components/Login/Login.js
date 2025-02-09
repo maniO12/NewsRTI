@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
-import Image from '../../Assests/ian-schneider-TamMbr4okv4-unsplash.jpg';
+import Image from '../../Assests/logowhite02.jpg';
 const Login = ({ setIsLoggedIn }) => {  
   const [credentials, setCredentials] = useState({ email: '', password: '' });
   const [loading, setLoading] = useState(false);

@@ -12,7 +12,7 @@ const Home = () => {
           <p className="home__description">
             This app enhances political literacy among youth, encouraging informed participation to drive positive social and political change for sustainable development.
           </p>
-          <button className="home__button">Not added</button>
+          <button className="home__button">Be the Change</button>
         </div>
         <div className="home__image">
           <img src={Image} alt="A family playing in the snow" />

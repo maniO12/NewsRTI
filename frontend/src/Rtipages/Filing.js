@@ -1,55 +1,90 @@
-import React from 'react';
-import './Filing.css';
+import React, { useState } from "react";
+import "./Filing.css";
 
 const Filing = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    whatsapp: "",
+    request: "",
+  });
+
+  const [emailSent, setEmailSent] = useState(false);
+
+  const handleInputChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setEmailSent(true);
+    // Handle form submission logic here
+  };
+
   return (
-    <div className="container1">
-      <h1>What is the RTI Act?</h1>
-      <p>
-        The Right to Information (RTI) Act is a landmark legislation enacted in India that empowers citizens to seek information from any public or government authority. Under the RTI Act, any citizen can request information, provided it does not pertain to national security, defense, or personal information. The public authority is obligated to respond to the application within 30 days.
-      </p>
-      <p>
-        While information disclosure in India is restricted by the Official Secrets Act of 1923 and various other special laws, many of these restrictions have been relaxed in light of the RTI Act. The Act also mandates that all public authorities computerize their records to facilitate faster processing of information requests through better categorization.
-      </p>
+    <div className="rti-container">
+      {/* Header Section */}
+      <header className="rti-header">
+        <h1>Raise Your Voice for Change</h1>
+        <p>RTI ensures transparency in every government project and service.</p>
+      </header>
 
-      <h2>What Information Can One Seek Under the RTI Act?</h2>
-      <p>
-        The RTI Act allows any Indian citizen to seek answers from any government authority. This can include inquiries about delayed IT refunds, passport or driving license statuses, details of ongoing or completed infrastructure projects, the status of an FIR, and funds allocated to various government schemes, including those related to MPs, MLAs, and the PM relief fund. Students can also request copies of their answer sheets from universities. The power of RTI and its applications are vast, emphasizing the importance of asking the right questions.
-      </p>
+      {/* Quote Section */}
+      <section className="rti-quote">
+        <p>"An informed citizen is an empowered citizen. Use RTI for a better future!"</p>
+      </section>
 
-      <h2>How to File an RTI Application</h2>
-      <ol>
-        <li>Visit the Online RTI Portal and click on the "Submit Request" option.</li>
-        <li>Read the guidelines and check the box indicating that you have understood them, then click the submit button.</li>
-        <li>Select the relevant Ministry or Department from the dropdown menu.</li>
-        <li>If you provide a mobile number, you will receive SMS alerts. Fields marked with an asterisk (*) are mandatory.</li>
-        <li>If you belong to the Below Poverty Line (BPL) category, select "Yes" and upload your BPL card certificate. No RTI fee is required for BPL applicants.</li>
-        <li>Upon submission, a unique registration number will be issued for future reference.</li>
-        <li>If you are not in the BPL category, select "No" and pay the prescribed fee of Rs 10.</li>
-        <li>The text for your RTI request should be up to 3000 characters. If it exceeds this limit, you can upload the application in the supporting document field.</li>
-        <li>After filling in all details, click on the "Make Payment" option.</li>
-        <li>Select your payment mode and complete the payment process.</li>
-        <li>You will receive an email and SMS alert confirming the submission of your application.</li>
-      </ol>
+      {/* Why RTI Section with Small Cards */}
+      <section className="rti-info">
+        <h2>Why Should You Use RTI?</h2>
+        <div className="rti-cards">
+          <div className="rti-card">🔍 <h3>Access Data</h3> <p>Know how public funds are spent.</p></div>
+          <div className="rti-card">📜 <h3>Demand Accountability</h3> <p>Ask why projects are delayed.</p></div>
+          <div className="rti-card">💡 <h3>Expose Corruption</h3> <p>Get details of government contracts.</p></div>
+          <div className="rti-card">🏛️ <h3>Strengthen Democracy</h3> <p>Participate actively in governance.</p></div>
+        </div>
+      </section>
 
-      <h2>What to Do If Your RTI Request Is Rejected?</h2>
-      <p>
-        There is a fundamental difference between an RTI Request and an RTI Appeal. An RTI Request is the initial application made by a citizen to a Public Information Officer (PIO) for information. In contrast, an RTI Appeal is filed with a senior officer against the PIO's decision, involving a third party (the Appellate Authority).
-      </p>
-      <p>
-        An appeal is necessary if the citizen is dissatisfied with the PIO's response or if the request is rejected.
-      </p>
+      {/* Why Collaborate Section */}
+      <section className="rti-benefits">
+        <h2>Why Collaborate With Our RTI App?</h2>
+        <div className="benefits-grid">
+          <div className="benefit-card">🚀 <h3>Make RTI Transparent</h3> <p>RTI should be a public-accessible act. Our app ensures that RTI reports are open and available for everyone.</p></div>
+          <div className="benefit-card">📢 <h3>Safety from Threats</h3> <p>Many RTI activists face threats. Our platform allows secure and anonymous submissions to protect users.</p></div>
+          <div className="benefit-card">🔐 <h3>Secure & Public Reports</h3> <p>With our RTI Report Section, all requests and responses can be made accessible, reducing misuse and ensuring accountability.</p></div>
+          <div className="benefit-card">📈 <h3>Educate Society</h3> <p>We help citizens learn about government activities and ensure transparency in governance.</p></div>
+        </div>
+      </section>
 
-      <h2>Steps for Filing an RTI Application First Appeal</h2>
-      <ol>
-        <li>Click on the "Submit First Appeal" option on the RTI online portal.</li>
-        <li>Read the guidelines and check the box indicating that you have read and understood them, then click the submit button.</li>
-        <li>Enter the registration number, email ID, and security code.</li>
-        <li>Select a reason for filing the appeal from the "Ground for Appeal" dropdown.</li>
-        <li>The text for the RTI first appeal should be up to 3000 characters. If it exceeds this limit, you can upload the application in the supporting document field.</li>
-        <li>Upon submission, a unique registration number will be issued for future reference.</li>
-      </ol>
+      {/* Problems Faced After Filing RTI */}
+      <section className="rti-problems">
+        <h2>Facing Issues After Filing an RTI?</h2>
+        <p>Many people encounter challenges after filing an RTI, such as:</p>
+        <ul className="rti-list">
+          <li>☑️ Receiving threat calls or harassment.</li>
+          <li>☑️ No response from the concerned department.</li>
+          <li>☑️ False information being provided.</li>
+          <li>☑️ Government officials delaying the RTI process.</li>
+        </ul>
+        <p>Our app helps you overcome these issues by providing legal support, connecting you with RTI activists, and ensuring your RTI remains transparent.
+        <br></br>  Call us : *************
+        </p>
+      </section>
 
+      {/* RTI Form Section */}
+      <section className="rti-form">
+        <h2>Join our WhatsApp Group</h2>
+        <div className="form-container12">
+          <form onSubmit={handleSubmit}>
+            <input type="text" name="name" placeholder="Full Name" value={formData.name} onChange={handleInputChange} required />
+            <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleInputChange} required />
+            <input type="tel" name="whatsapp" placeholder="WhatsApp Number" value={formData.whatsapp} onChange={handleInputChange} required />
+            <textarea name="request" placeholder="Why you want to join?" value={formData.request} onChange={handleInputChange} required />
+            <button type="submit" className="submit-btn">Add</button>
+          </form>
+          {emailSent && <div className="email-confirm">Your details will be verified and processed.</div>}
+        </div>
+      </section>
     </div>
   );
 };

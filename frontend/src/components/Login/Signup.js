@@ -40,7 +40,7 @@ const Signup = () => {
 
       if (response.ok && json.status) {
         localStorage.setItem('token', json.authtoken);
-        navigate('');
+        navigate('/');
       } else {
         setError(json.message || 'An error occurred. Please try again.');
       }

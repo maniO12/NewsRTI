@@ -1,0 +1,114 @@
+/* Container */
+.group-container {
+    width: 100%;
+    max-width: 420px;
+    background: linear-gradient(145deg, #ffffff, #f1f1f1);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -4px -4px 10px rgba(255, 255, 255, 0.7);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .group-container:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Heading */
+  .group-container h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 16px;
+  }
+  
+  /* Input Fields */
+  .group-input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #f9f9f9;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1), inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+    color: #333;
+    margin-bottom: 12px;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .group-input:focus {
+    box-shadow: inset 3px 3px 7px rgba(0, 0, 0, 0.15), inset -3px -3px 7px rgba(255, 255, 255, 0.8);
+  }
+  
+  /* Buttons */
+  .group-button {
+    width: 100%;
+    background: linear-gradient(135deg, #4caf50, #388e3c);
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .group-button:hover {
+    background: linear-gradient(135deg, #45a049, #2e7d32);
+    transform: translateY(-2px);
+  }
+  
+  /* Error Message */
+  .error-text {
+    color: #d32f2f;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  /* Area List */
+  .area-list {
+    margin-top: 16px;
+  }
+  
+  .area-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .area-item:hover {
+    background: #e0e0e0;
+    transform: translateY(-2px);
+  }
+  
+  .area-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  /* Join Button */
+  .join-button {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .join-button:hover {
+    background: linear-gradient(135deg, #0069d9, #004b9a);
+    transform: translateY(-2px);
+  }
+  
