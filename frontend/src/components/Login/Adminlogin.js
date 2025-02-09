@@ -20,13 +20,14 @@ const AdminLogin = ({ setIsLoggedIn, isAuthenticated, setIsAuthenticated }) => {
     }
   }, [navigate, setIsLoggedIn, setIsAuthenticated]);
 
-  const handleSubmitt = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const { email, password } = credentials;
     setLoading(true);
     setError('');
 
-    const loginUrl = 'http://localhost:5000/api/admin/login';
+    const loginUrl = `${process.env.REACT_APP_API_URL}/api/admin/login`;
+// Use environment variable
 
     try {
       const response = await fetch(loginUrl, {
@@ -75,7 +76,7 @@ const AdminLogin = ({ setIsLoggedIn, isAuthenticated, setIsAuthenticated }) => {
           <h2 className="text-center">Admin Login</h2>
 
           {!isAuthenticated ? (
-            <form onSubmit={handleSubmitt}>
+            <form onSubmit={handleSubmit}>
               <div className="mb-3">
                 <label htmlFor="email" className="form-label4">Email address</label>
                 <input
@@ -132,5 +133,4 @@ const AdminLogin = ({ setIsLoggedIn, isAuthenticated, setIsAuthenticated }) => {
     </div>
   );
 };
-
 export default AdminLogin;

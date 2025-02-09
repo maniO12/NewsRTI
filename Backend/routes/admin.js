@@ -4,12 +4,11 @@ import { body, validationResult } from 'express-validator';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import fetchAdmin from '../middleware/fetch.js'; // Middleware to fetch admin details
-const router = Router();
 
-const JWT_SECRET = 'Thisissecretwebtokn'; 
+const router = Router();
+const JWT_SECRET = 'Thisissecretwebtokn';
 
 // --- Route 1: Create a New Admin ---
-// POST /api/admin/createAdmin
 router.post(
   '/createAdmin',
   [
@@ -38,23 +37,18 @@ router.post(
         password: hashedPassword,
       });
 
-      const data = {
-        admin: {
-          id: admin.id,
-        },
-      };
-
+      const data = { admin: { id: admin.id } };
       const authtoken = jwt.sign(data, JWT_SECRET);
-      res.json({ authtoken, status: true });
+
+      res.status(201).json({ authtoken, status: true });
     } catch (error) {
       console.error('Error creating admin:', error);
-      res.status(500).send('Internal server error');
+      res.status(500).json({ error: 'Internal server error' });
     }
   }
 );
 
 // --- Route 2: Admin Login ---
-// POST /api/admin/login
 router.post(
   '/login',
   [
@@ -79,34 +73,34 @@ router.post(
         return res.status(400).json({ message: 'Invalid email or password' });
       }
 
-      const data = {
-        admin: {
-          id: admin.id,
-        },
-      };
-
+      const data = { admin: { id: admin.id } };
       const authtoken = jwt.sign(data, JWT_SECRET);
-      res.json({ authtoken, status: true });
+
+      res.status(200).json({ authtoken, status: true });
     } catch (error) {
       console.error('Error in /login:', error.message);
-      res.status(500).send('Internal server error');
+      res.status(500).json({ error: 'Internal server error' });
     }
   }
 );
 
 // --- Route 3: Get Admin Details ---
-// POST /api/admin/getAdmin
 router.post('/getAdmin', fetchAdmin, async (req, res) => {
   try {
+    if (!req.admin || !req.admin.id) {
+      return res.status(401).json({ error: 'Unauthorized' });
+    }
+
     const id = req.admin.id;
     const admin = await Admin.findById(id).select('-password');
     if (!admin) {
-      return res.status(404).send({ error: 'Admin not found' });
+      return res.status(404).json({ error: 'Admin not found' });
     }
-    res.send(admin);
+
+    res.status(200).json(admin);
   } catch (error) {
     console.error('Error fetching admin details:', error.message);
-    res.status(500).send('Internal server error');
+    res.status(500).json({ error: 'Internal server error' });
   }
 });
 

@@ -4,19 +4,17 @@ import { body, validationResult } from 'express-validator';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import fetchuser from '../middleware/fetch.js';
+
 const router = Router();
+const JWT_SECRET = 'Thisissecretwebtokn';
 
-
-const JWT_SECRET = 'Thisissecretwebtokn'; 
-
- // SignIN /api/auth/createUser
-
+// --- Route 1: Create User ---
 router.post(
   '/createUser',
   [
-    body('name','Enter a valid name').isLength({ min: 3 }),
-    body('email','Enter a valid email').isEmail(),
-    body('password','Enter a valid password').isLength({ min: 5 }),
+    body('name', 'Enter a valid name').isLength({ min: 3 }),
+    body('email', 'Enter a valid email').isEmail(),
+    body('password', 'Enter a valid password').isLength({ min: 5 }),
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -24,39 +22,34 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-  try{
+    try {
+      let user = await User.findOne({ email: req.body.email });
+      if (user) {
+        return res.status(400).json({ error: 'User with this email already exists' });
+      }
 
-      let user = await  User.findOne({email: req.body.email});
-      if(user){
-          return   res.status(500).send('User with this Email already exists'); 
-}
- const salt = await bcrypt.genSalt(10);
- const secPass = await bcrypt.hash(req.body.password,salt);
-    
-       user = await User.create({
+      const salt = await bcrypt.genSalt(10);
+      const secPass = await bcrypt.hash(req.body.password, salt);
+
+      user = await User.create({
         name: req.body.name,
         email: req.body.email,
         password: secPass,
       });
 
-    const data = {
-      user:{
-              id:user.id
-      }
-    }  
-  const authtoken = jwt.sign(data,JWT_SECRET);
-      res.json({authtoken,status:true});
+      const data = { user: { id: user.id } };
+      const authtoken = jwt.sign(data, JWT_SECRET, { expiresIn: '1h' });
+
+      res.status(201).json({ authtoken, status: true });
 
     } catch (error) {
-      console.error('Error creating user:', error); 
-      res.status(500).send('Some error occurred');
+      console.error('Error creating user:', error);
+      res.status(500).json({ error: 'Internal server error' });
     }
   }
 );
 
-
-
-//LogIN /api/auth/login
+// --- Route 2: User Login ---
 router.post(
   '/login',
   [
@@ -72,52 +65,46 @@ router.post(
     const { email, password } = req.body;
 
     try {
-      // Find user by email
       const user = await User.findOne({ email });
       if (!user) {
-        return res.status(400).json({ error: "Invalid credentials" });
+        return res.status(400).json({ error: 'Invalid credentials' });
       }
 
-      // Compare the password
       const isMatch = await bcrypt.compare(password, user.password);
       if (!isMatch) {
-        return res.status(400).json({ error: "Invalid credentials" });
+        return res.status(400).json({ error: 'Invalid credentials' });
       }
 
-      // Create JWT payload
-      const data = {
-        user: {
-          id: user.id,
-        },
-      };
-
-      // Sign the JWT token (expires in 1 hour)
+      const data = { user: { id: user.id } };
       const authtoken = jwt.sign(data, JWT_SECRET, { expiresIn: '1h' });
-      res.json({ authtoken, status: true });
+
+      res.status(200).json({ authtoken, status: true });
 
     } catch (error) {
       console.error('Login Error:', error);
-      res.status(500).send('Some error occurred');
+      res.status(500).json({ error: 'Internal server error' });
     }
   }
 );
 
-
-//GetUser api/auth/getUser
-
-router.post('/getUser',fetchuser,async(req,res)=>{
-
-try{
-      const id = req.user.id;
-      const user = await User.findById(id).select("-password");
-      if (!user) {
-        return res.status(404).send({ error: "User not found" });
+// --- Route 3: Get User Details ---
+router.post('/getUser', fetchuser, async (req, res) => {
+  try {
+    if (!req.user || !req.user.id) {
+      return res.status(401).json({ error: 'Unauthorized' });
     }
-      res.send(user);
-}
-catch(error){
-  console.error(error.message);
-  res.status(500).send("Internal Server Error");   
-}
+
+    const user = await User.findById(req.user.id).select('-password');
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    res.status(200).json(user);
+
+  } catch (error) {
+    console.error('Error fetching user details:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 });
+
 export default router;
