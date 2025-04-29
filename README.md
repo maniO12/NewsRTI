@@ -26,9 +26,9 @@ https://drive.google.com/file/d/1a0vPxtVyrmuRmgZMge4I4KP1nlQCOB32/view?usp=drive
 ```sh
 git clone https://github.com/maniO12/NewsRTI.git
 cd NewsRTI
-yarn install  # or npm install
-yarn dev  # Start server
-yarn start  # Start frontend
+yarn install  
+yarn dev 
+yarn run dev  //for full stack
 ```
 
 ## License
